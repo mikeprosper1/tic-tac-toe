@@ -339,18 +339,3 @@ backBtn.addEventListener("click", () => {
 // INITIAL LOAD
 // ============================
 loadStats();
-// ============================
-// Register the Service Worker
-// ============================
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js")
-      .then((registration) => {
-        console.log("Service Worker Registered:", registration.scope);
-      })
-      .catch((err) => {
-        console.error("Service Worker registration failed:", err);
-      });
-  });
-}
