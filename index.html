@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER / TITLE -->
+    <h1>Tic Tac Toe</h1>
+    <button id="backBtn" class="btn back hidden">⬅ Back to Menu</button>
+
+    <!-- SELECTION SCREEN -->
+<div id="start-screen" class="card">
+    <select id="mode" class="mode-select">
+        <option value="easy">Easy (AI)</option>
+        <option value="normal">Normal (AI)</option>
+        <option value="hard">Hard (AI)</option>
+        <option value="human">Human vs Human</option>
+    </select>
+    <button id="start-btn" class="btn">Start Match</button>
+
+    <!-- STATS (inside start screen so it hides with menu) -->
+    <div class="stats card">
+        <h3>Statistics</h3>
+        <p>Total Matches: <span id="totalMatches">0</span></p>
+        <p>X Wins: <span id="totalXWins">0</span></p>
+        <p>O Wins: <span id="totalOWins">0</span></p>
+        <p>Drawn Matches: <span id="totalDraws">0</span></p>
+    </div>
+    <!-- MATCH HISTORY -->
+    <div id="history" class="history hidden">
+        <h3>Match History</h3>
+        <ul id="historyList"></ul>
+    </div>
+</div>
+
+    <!-- GAME INFO (hidden at first) -->
+    <div id="game-info" class="card hidden">
+        <p class="round">Round: <span id="round">1</span></p>
+        <p class="score">
+            X Wins: <span id="xScore">0</span> |
+            O Wins: <span id="oScore">0</span> |
+            Draws: <span id="drawScore">0</span>
+        </p>
+    </div>
+
+    <!-- BOARD -->
+    <div id="board" class="board hidden">
+        <div class="cell" data-i="0"></div>
+        <div class="cell" data-i="1"></div>
+        <div class="cell" data-i="2"></div>
+        <div class="cell" data-i="3"></div>
+        <div class="cell" data-i="4"></div>
+        <div class="cell" data-i="5"></div>
+        <div class="cell" data-i="6"></div>
+        <div class="cell" data-i="7"></div>
+        <div class="cell" data-i="8"></div>
+    </div>
+
+    <!-- STATUS -->
+    <p id="status" class="status hidden"></p>
+
+    <!-- NEXT / RESTART -->
+    <button id="nextBtn" class="btn hidden" disabled>Next Round</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

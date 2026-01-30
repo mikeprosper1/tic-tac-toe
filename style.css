@@ -1,0 +1,280 @@
+/* ==========================
+   RESET
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================
+   BODY
+========================== */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+.container {
+  width: 95%;
+  max-width: 420px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================
+   TITLE
+========================== */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* ==========================
+   CARD
+========================== */
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ==========================
+   SELECT & BUTTONS
+========================== */
+.mode-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #00f2fe, #00a0ff);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.back {
+  width: auto;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  background: #64748b;
+  color: #fff;
+}
+
+.back:hover {
+  background: #52606d;
+  transform: translateY(-1px);
+}
+
+/* ==========================
+   GAME INFO
+========================== */
+.round, .score {
+  font-size: 1rem;
+  margin: 5px 0;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ==========================
+   BOARD
+========================== */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  height: 90px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* ==========================
+   PLAYER COLORS & ANIMATION
+========================== */
+.cell.X {
+  color: #ff4c4c;
+  animation: pop .2s ease;
+}
+
+.cell.O {
+  color: #4cff9d;
+  animation: pop .2s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.6); }
+  100% { transform: scale(1); }
+}
+
+/* ==========================
+   STATUS TEXT
+========================== */
+.status {
+  margin: 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ==========================
+   HIDDEN ELEMENTS
+========================== */
+.hidden {
+  display: none;
+}
+
+/* ==========================
+   MATCH HISTORY
+========================== */
+.history {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.history h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.history ul {
+  list-style: none;
+  max-height: 140px;
+  overflow-y: auto;
+  padding-left: 0;
+}
+
+.history li {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ==========================
+   STATS PANEL
+========================== */
+.stats h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.stats p {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #fff;
+}
+
+/* ==========================
+   TOUCH SUPPORT
+========================== */
+.cell {
+  touch-action: manipulation;
+}
+/* ==========================
+   PROFESSIONAL DROPDOWN STYLE
+========================== */
+.mode-select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.6); /* wireframe/border effect */
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(145deg, rgba(0,0,0,0.25), rgba(0,0,0,0.15)); /* subtle gradient */
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); 
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+  transition: 0.3s all;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25); /* subtle floating effect */
+}
+
+.mode-select:hover {
+  border-color: #00c6ff; /* glowing border on hover */
+  background: linear-gradient(145deg, rgba(0,0,0,0.35), rgba(0,0,0,0.2));
+  transform: scale(1.02);
+}
+
+.mode-select:focus {
+  outline: none;
+  border-color: #00f2fe; /* highlight when selected */
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.6);
+}
+
+.mode-select option {
+  color: #000;
+  background: #fff;
+  font-weight: 500;
+}
