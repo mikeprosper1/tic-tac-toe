@@ -339,3 +339,18 @@ backBtn.addEventListener("click", () => {
 // INITIAL LOAD
 // ============================
 loadStats();
+// Register service worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(reg => console.log("Service Worker registered:", reg.scope))
+      .catch(err => console.log("Service Worker failed:", err));
+  });
+}
+// ============================
+// SPLASH SCREEN HIDE
+// ============================
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash");
+  setTimeout(() => splash.style.display = "none", 1500); // hide after 1.5s
+});

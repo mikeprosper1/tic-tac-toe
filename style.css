@@ -278,3 +278,71 @@ h1 {
   background: #fff;
   font-weight: 500;
 }
+.splash {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #1e3c72;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.splash img {
+  width: 60vw;
+  max-width: 280px;
+  min-width: 160px;
+  animation: spin 1.5s linear infinite;
+  filter: drop-shadow(0 0 20px rgba(0, 198, 255, 0.6));
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* ==========================
+   CELL HOVER & BOARD DESIGN
+========================== */
+.board {
+  background: linear-gradient(145deg, #1e3c72, #2a5298); /* vibrant blue gradient */
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cell {
+  background: linear-gradient(135deg, #6e86ee, #5f7de0); /* bright card-like cells */
+  border-radius: 15px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.cell:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #5083f3, #4965e0);
+}
+
+.cell.X {
+  color: #ff4c4c; /* red X */
+  text-shadow: 0 2px 6px rgba(255,76,76,0.6);
+  animation: pop 0.25s ease forwards;
+}
+
+.cell.O {
+  color: #4cff9d; /* green O */
+  text-shadow: 0 2px 6px rgba(76,255,157,0.6);
+  animation: pop 0.25s ease forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
